@@ -8,6 +8,7 @@
 <body>
     <h1><a href="https://t.me/s/polls_channel">Polls Channel</a> Messages Log</h1>
     <p>GitHub: <a href="https://github.com/blueset/polls_channel_history">https://github.com/blueset/polls_channel_history</a></p>
+    <p>Last update: <time datetime="2020-11-29T06:40:19.269545+00:00" id="lastUpdate">2020-11-29T06:40:19.269545+00:00</time></p>
     <ul id="messages">
         
             <li id="message-1">
@@ -41390,5 +41391,9 @@ N：母语水平
             white-space: pre-line;
         }
     </style>
+    <script>
+        const time = document.getElementById("lastUpdate");
+        time.innerText = new Date(time.innerText).toLocaleString();
+    </script>
 </body>
 </html>

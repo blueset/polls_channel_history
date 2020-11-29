@@ -8,6 +8,7 @@
 <body>
     <h1><a href="https://t.me/s/polls_channel">Polls Channel</a> Messages Log</h1>
     <p>GitHub: <a href="https://github.com/blueset/polls_channel_history">https://github.com/blueset/polls_channel_history</a></p>
+    <p>Last update: <time datetime="{{ time }}" id="lastUpdate">{{ time }}</time></p>
     <ul id="messages">
         {% for message in messages %}
             <li id="message-{{ message['id'] }}">
@@ -33,5 +34,9 @@
             white-space: pre-line;
         }
     </style>
+    <script>
+        const time = document.getElementById("lastUpdate");
+        time.innerText = new Date(time.innerText).toLocaleString();
+    </script>
 </body>
 </html>
