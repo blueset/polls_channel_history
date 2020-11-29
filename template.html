@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls Channel Messages Log</title>
+</head>
+<body>
+    <h1><a href="https://t.me/s/polls_channel">Polls Channel</a> Messages Log</h1>
+    <p>GitHub: <a href="https://github.com/blueset/polls_channel_history">https://github.com/blueset/polls_channel_history</a></p>
+    <ul id="messages">
+        {% for message in messages %}
+            <li id="message-{{ message['id'] }}">
+                <div class="messageId">
+                    <a href="https://t.me/polls_channel/{{ message['id'] }}">
+                        #{{ message['id'] }}
+                    </a>
+                </div>
+                <div class="messageContent">{{ message['text_html']|safe }}</div>
+                {% if "question" in message %}
+                    <div class="question">{{ message['question'] }}</div>
+                    <ul class="answers">
+                        {% for answer in message['answers'] %}
+                        <li>{{ answer }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <style>
+        .messageContent, .question {
+            white-space: pre-line;
+        }
+    </style>
+</body>
+</html>
