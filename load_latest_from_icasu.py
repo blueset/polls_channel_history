@@ -20,6 +20,8 @@ if earliest_new_message_id > last_known_id:
     print("Aborting to avoid loosing messages in between.", file=sys.stderr)
     exit(1)
 
+messages_added = 0
+
 for i in new_messages:
     if i["id"] <= last_known_id:
         continue
@@ -31,7 +33,13 @@ for i in new_messages:
         poll = i["media"]["poll"]
         data["question"] = poll["question"]
         data["answers"] = [j["text"] for j in poll["answers"]]
+    
     base.append(data)
 
-with open("data.json", "w") as f:
-    json.dump(base, f)
+    messages_added += 1
+
+if messages_added > 0:
+    with open("data.json", "w") as f:
+        json.dump(base, f)
+
+print(f"::set-output name=messagesAdded::{messages_added}")
