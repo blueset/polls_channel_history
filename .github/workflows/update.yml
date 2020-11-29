@@ -26,8 +26,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.1.4
         
-      - name: Install Python dependencies
-        run: pip install -R requirements.txt
+      - name: Python Dependency Installation
+        uses: py-actions/py-dependency-install@v2.1.0
         
       - name: Update the latest 20 messages from i_c_a.su
         id: download
