@@ -32,16 +32,13 @@ jobs:
       - name: Update the latest 20 messages from i_c_a.su
         id: download
         run: python load_latest_from_icasu.py
-        outputs:
-          some_output:
-            description: Number of messages updated
       
       - name: Generate html from data
-        if: "${{ steps.download.outputs.messagesAdded == 0 }}"
+        if: "${{ steps.download.outputs.messagesAdded != 0 }}"
         run: python render_data.py
       
       - name: Add & Commit changes
-        if: "${{ steps.download.outputs.messagesAdded == 0 }}"
+        if: "${{ steps.download.outputs.messagesAdded != 0 }}"
         uses: EndBug/add-and-commit@v5.2.0
         with:
           # Arguments for the git add command
