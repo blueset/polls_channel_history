@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  update:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-python@v2.1.4
         
       - name: Install Python dependencies
-        run: pip install -U requirements.txt
+        run: pip install -R requirements.txt
         
       - name: Update the latest 20 messages from i_c_a.su
         id: download
