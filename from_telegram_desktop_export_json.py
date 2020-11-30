@@ -11,7 +11,6 @@ import html
 
 def transform_text(t) -> str:
     if isinstance(t, str):
-        return html.escape(t)
     elif isinstance(t, list):
         return "".join(transform_text(i) for i in t)
     else:
