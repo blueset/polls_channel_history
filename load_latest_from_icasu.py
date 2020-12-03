@@ -7,7 +7,16 @@ CHANNEL_ID = "polls_channel"
 with open("data.json", "r") as f:
     base: list = json.load(f)
 
-new = requests.get(f"https://tg.i-c-a.su/json/{CHANNEL_ID}?limit=20").json()
+url = f"https://tg.i-c-a.su/json/{CHANNEL_ID}?limit=20"
+
+print(url)
+
+new = requests.get(url).json()
+
+if "errors" in new:
+    for i in new["errors"]:
+        print(f"::error::{i}")
+    exit(1)
 
 last_known_id = max(i["id"] for i in base)
 
