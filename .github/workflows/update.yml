@@ -29,9 +29,9 @@ jobs:
       - name: Python Dependency Installation
         uses: py-actions/py-dependency-install@v2.1.0
         
-      - name: Update the latest 20 messages from i_c_a.su
+      - name: Update the latest 20 messages from t.me/s
         id: download
-        run: python load_latest_from_icasu.py
+        run: python load_latest_from_tme.py
       
       - name: Generate html from data
         if: "${{ steps.download.outputs.messagesAdded != 0 }}"
