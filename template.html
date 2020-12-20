@@ -31,7 +31,7 @@
     </ul>
     <script>
         const time = document.getElementById("lastUpdate");
-        time.innerText = new Date(time.innerText).toLocaleString();
+        time.innerText = `${new Date(time.innerText).toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
     </script>
 </body>
 </html>
