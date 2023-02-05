@@ -60,6 +60,6 @@ for i in messages:
 
 if messages_added > 0:
     with open("data.json", "w") as f:
-        json.dump(base, f)
+        json.dump(base, f, ensure_ascii=False, indent=2)
 
 print(f"::set-output name=messagesAdded::{messages_added}")
