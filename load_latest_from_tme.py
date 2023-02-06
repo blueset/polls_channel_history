@@ -1,6 +1,7 @@
 import requests
 import json
 import sys
+import os
 from bs4 import BeautifulSoup
 
 CHANNEL_ID = "polls_channel"
@@ -62,4 +63,5 @@ if messages_added > 0:
     with open("data.json", "w") as f:
         json.dump(base, f, ensure_ascii=False, indent=2)
 
-print(f"::set-output name=messagesAdded::{messages_added}")
+with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+    f.write(f"messagesAdded={messages_added}\n")
