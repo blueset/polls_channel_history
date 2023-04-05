@@ -35695,5 +35695,22 @@
       "其他",
       "？"
     ]
+  },
+  {
+    "id": 2800,
+    "text_html": "",
+    "question": "您通过哪种格式写博文？投稿自 Yuuta",
+    "answers": [
+      "Markdown",
+      "LaTeX",
+      "typst",
+      "HTML",
+      "Plain Text",
+      "ODT / RTF",
+      "RST",
+      "富文本编辑器",
+      "其他格式",
+      "不符合题目要求"
+    ]
   }
 ]
