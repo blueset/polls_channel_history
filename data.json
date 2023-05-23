@@ -35727,5 +35727,15 @@
       "尚未接种，暂不考虑近期接种",
       "为难 / 吃瓜"
     ]
+  },
+  {
+    "id": 2803,
+    "text_html": "",
+    "question": "你有订阅 OpenAI 的 ChatGPT Plus 吗？投稿自 Eana Hufwe(@blueset)",
+    "answers": [
+      "有",
+      "想订阅但没法订阅",
+      "不想订阅"
+    ]
   }
 ]
